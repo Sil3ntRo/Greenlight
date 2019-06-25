@@ -20,7 +20,7 @@ class Home extends Component {
 
     componentDidMount() {
 
-            this.setState({ loading: true })
+            this.setState({ loading: true });
             const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
             this.fetchItems(endpoint);
 
@@ -46,7 +46,6 @@ class Home extends Component {
 
     loadMoreItems = () => {
 
-
         let endpoint = '';
         this.setState({ loading: true });
 
@@ -54,7 +53,7 @@ class Home extends Component {
             endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=${this.state.currentPage + 1}`;
 
         } else {
-            endpoint = `${API_URL}search/movie?api_key=${API_KEY}&language=en-US&query=${this.props.searchTerm}&page=${this.props.currentPage + 1}`;
+            endpoint = `${API_URL}search/movie?api_key=${API_KEY}&language=en-US&query=${this.state.searchTerm}&page=${this.state.currentPage + 1}`;
         }
         this.fetchItems(endpoint);
     }

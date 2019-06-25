@@ -7,6 +7,6 @@ const LoadMoreBtn = (props) => {
             <p>{props.text}</p>
         </div>
     )
-};
+}
 
 export default LoadMoreBtn;
